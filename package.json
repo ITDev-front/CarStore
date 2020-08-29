@@ -1,0 +1,22 @@
+{
+  "name": "carstore",
+  "version": "1.0.0",
+  "description": "Practice work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "practice",
+    "work",
+    "html",
+    "css",
+    "js"
+  ],
+  "author": "Albert Shamsutdinov",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.26.10"
+  },
+  "dependencies": {}
+}
