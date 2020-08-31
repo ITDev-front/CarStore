@@ -42,6 +42,22 @@ header .header-top {
   align-items: center;
   line-height: 3vw;
 }
+header .header-top input[type=search] {
+  display: none;
+  padding: 0.4vw;
+  background-color: #1c1c1c;
+  border: none;
+  border-radius: 0.2vw;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+header .header-top input[type=search].hidden {
+  width: 0;
+}
+header .header-top input[type=search].shown {
+  display: block;
+  width: 46vw;
+}
 header .header-top .element {
   display: flex;
   align-items: center;
@@ -112,11 +128,15 @@ header .header-middle .additional-elements .element {
   margin: 0 auto;
 }
 header .header-middle .additional-elements .element svg {
-  display: list-item;
+  display: block;
   width: 2vw;
   height: 2vw;
-  margin: 0 auto 0.5vw auto;
+  margin: 0 auto;
   fill: #ff3448;
+}
+header .header-middle .additional-elements .element span.name-block {
+  display: block;
+  padding-top: 0.4vw;
 }
 header .header-middle .additional-elements .element a {
   color: #fff;

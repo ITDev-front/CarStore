@@ -32,26 +32,42 @@ header .header-top,
 header .header-middle,
 header hr {
   display: flex;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   width: 73.5%;
+  margin: 0 auto;
 }
 header .header-top {
   justify-content: flex-end;
   align-items: center;
   line-height: 3vw;
 }
+header .header-top input[type=search] {
+  visibility: hidden;
+  padding: 0.4vw;
+  background-color: #1c1c1c;
+  border: none;
+  border-radius: 0.2vw;
+  color: #fff;
+  transition: width 0.5s ease, visibility 0.5s ease;
+}
+header .header-top input[type=search].hidden {
+  width: 0;
+  transition-delay: 0.5s;
+}
+header .header-top input[type=search].shown, header .header-top input[type=search]:focus {
+  visibility: visible;
+  width: 50vw;
+}
 header .header-top .element {
   display: flex;
   align-items: center;
-  margin: 0 2.7% 0 1.1%;
+  margin: 0 1.1% 0 1.1%;
 }
 header .header-top .element svg {
   width: 0.9vw;
   height: 0.9vw;
   margin-right: 0.35vw;
   fill: #ff3448;
+  transition: fill 0.2s ease-in-out;
 }
 header .header-top .element a {
   display: flex;
@@ -60,11 +76,16 @@ header .header-top .element a {
   color: #ff3448;
   text-decoration: none;
   align-items: center;
+  transition: color 0.2s ease-in-out;
 }
-header .header-top svg#header-search {
+header .header-top label {
+  display: flex;
+  margin: 0 1.8% 0 1.4%;
+  cursor: pointer;
+}
+header .header-top label svg#header-search {
   width: 1.6vw;
   height: 1.6vw;
-  margin: 0 1.8% 0 1.4%;
   fill: #fff;
 }
 header .header-middle {
@@ -112,11 +133,16 @@ header .header-middle .additional-elements .element {
   margin: 0 auto;
 }
 header .header-middle .additional-elements .element svg {
-  display: list-item;
+  display: block;
   width: 2vw;
   height: 2vw;
-  margin: 0 auto 0.5vw auto;
+  margin: 0 auto;
   fill: #ff3448;
+  transition: fill 0.2s ease-in-out;
+}
+header .header-middle .additional-elements .element span.name-block {
+  display: block;
+  padding-top: 0.4vw;
 }
 header .header-middle .additional-elements .element a {
   color: #fff;
@@ -130,7 +156,16 @@ header .header-bottom {
 header .header-bottom a {
   margin: 0 4%;
   text-decoration: none;
-  color: #fff;
+  background: linear-gradient(270deg, #fff, #fff);
+  background-size: 50vw 20vw;
+  background-position: 0vw;
+  background-clip: text;
+  -o-background-clip: text;
+  -ms-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.2s ease-in-out;
 }
 
 main .banner {
@@ -172,7 +207,6 @@ main .items .item h2 {
 }
 main .items .item img {
   position: unset;
-  width: 100%;
   max-height: 23vw;
   margin-top: auto;
   transition: transform 0.2s ease-in-out;
@@ -216,38 +250,79 @@ main .featured-products .items-2 .wrapper {
   margin: 0 auto;
   padding-bottom: 7.5vw;
 }
-main .featured-products .items-2 .wrapper .item {
+main .featured-products .items-2 .wrapper .fp-item-wrapper {
+  position: relative;
   width: 17%;
-  padding: 1em;
   margin: 0 auto;
-  background-color: #363636;
-  border-radius: 0.2vw;
-  cursor: pointer;
 }
-main .featured-products .items-2 .wrapper .item img {
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item {
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  visibility: visible;
+  opacity: 1;
+  transform: rotateY(0deg);
+  background-color: #363636;
+  border: solid 0.2vw #363636;
+  border-radius: 0.2vw;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, visibility 0.2s ease-in-out 0.1s;
+}
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item img {
   position: unset;
   width: 100%;
 }
-main .featured-products .items-2 .wrapper .item h1 {
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item h1 {
   padding: 0;
   margin: 1vw 0 0 0;
   font-size: 1.5vw;
   color: #fff;
 }
-main .featured-products .items-2 .wrapper .item h2 {
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item h2 {
   margin-top: 1.6vw;
   font-size: 1.03vw;
   color: #ff3448;
   text-transform: uppercase;
 }
-main .featured-products .items-2 .wrapper .item .rating {
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item .rating {
   padding: 0.5vw 0 1.1vw 0;
 }
-main .featured-products .items-2 .wrapper .item .rating span {
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item .rating span {
   color: #1c1c1c;
 }
-main .featured-products .items-2 .wrapper .item .rating span.checked {
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item .rating span.checked {
   color: #ff3448;
+}
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item span.choiced {
+  position: absolute;
+  top: 0.5vw;
+  right: 0.5vw;
+}
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item span.choiced svg {
+  width: 1.5vw;
+  height: 1.5vw;
+  fill: #ff3448;
+}
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item.selected {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: rotateY(-180deg);
+  border: solid 0.2vw #ff3448;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s ease-in-out 0.1s;
+}
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item.selected.shown {
+  visibility: visible;
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: rotateY(-180deg);
 }
 main .special-offers {
   position: relative;
@@ -321,6 +396,7 @@ footer .wrapper hr {
   margin: 1vw 0;
   border: none;
   border-top: 0.3vw solid #9c1c28;
+  transition: width 0.2s ease-in-out;
 }
 footer .wrapper a {
   display: block;
@@ -328,6 +404,7 @@ footer .wrapper a {
   font-weight: 900;
   text-decoration: none;
   color: #9c1c28;
+  transition: color 0.2s ease-in-out;
 }
 footer .wrapper .newsletter {
   width: 29.5%;
@@ -362,6 +439,27 @@ footer .wrapper .newsletter button {
   cursor: pointer;
 }
 
+header .header-top .element:hover a {
+  color: #dc0016;
+}
+header .header-top .element:hover svg {
+  fill: #dc0016;
+}
+header .header-middle .additional-elements .element:hover svg {
+  fill: #dc0016;
+}
+header .header-bottom a:hover {
+  background: linear-gradient(270deg, #ff3448, #fff);
+  background-size: 50vw 20vw;
+  background-position: 6vw;
+  background-clip: text;
+  -o-background-clip: text;
+  -ms-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 main .items .item:hover.white {
   background-color: #aa1927;
 }
@@ -373,6 +471,16 @@ main .items .item:hover h2 {
 }
 main .items .item:hover img {
   transform: scale(1.1);
+}
+
+footer .quicklink a:hover {
+  color: #ff3448;
+}
+footer .quicklink:hover hr {
+  width: 100%;
+}
+footer .newsletter:hover hr {
+  width: 100%;
 }
 
 /*# sourceMappingURL=/CarStore.e31bb0bc.css.map */
