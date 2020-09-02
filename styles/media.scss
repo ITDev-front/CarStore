@@ -1,0 +1,150 @@
+@media only screen and (max-width: 800px) {
+    main {
+        .featured-products {
+            .special-offers {
+                .wrapper {
+                    .item {
+                        h3 {
+                            font-size: 1.5vw;
+                        }
+
+                        button {
+                            font-size: 1.75vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    footer {
+        .quicklink {
+            a {
+                font-size: 1.75vw;
+            }
+        }
+
+        .quicklink:nth-child(2) {
+            display: none;
+        }
+
+        .wrapper {
+            h1 {
+                font-size: 2vw;
+            }
+
+            .newsletter {
+                width: 50%;
+
+                input[type="email"] {
+                    margin-top: 2.2vw;
+                }
+
+                p {
+                    font-size: 2vw;
+                }
+
+                button {
+                    margin: 2.2vw auto 0 auto;
+
+                    font-size: 1.75vw;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    header {
+        .header-top {
+            .element {
+                a {
+                    font-size: 1.25vw;
+                }
+
+                svg {
+                    width: 1.2vw;
+                    height: 1.2vw;
+                }
+            }
+
+            input[type="search"].shown,
+            input[type="search"]:focus {
+                width: 45vw;
+            }
+        }
+
+        .header-middle {
+            .information {
+                display: none;
+            }
+
+            .additional-elements {
+                margin-left: auto;
+            }
+        }
+
+        .header-bottom {
+            a {
+                margin: 0 2.5%;
+            }
+        }
+    }
+
+    main {
+        .items {
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
+
+            .item {
+                .item-inner {
+                    padding: 8vw 0 8vw 8vw;
+
+                    h1 {
+                        padding-bottom: 1vw;
+                        font-size: 5vw;
+                    }
+
+                    h2 {
+                        font-size: 2vw;
+                    }
+                }
+
+                img {
+                    margin-left: auto;
+                }
+            }
+        }
+
+        .featured-products {
+            h1 {
+                font-size: 3vw;
+            }
+
+            .items-2 {
+                .wrapper {
+                    width: 100%;
+
+                    .fp-item-wrapper {
+                        .fp-item {
+                            h2 {
+                                height: 4vw;
+                                line-height: 2.25vw;
+
+                                font-size: 2vw;
+                            }
+
+                            h1 {
+                                font-size: 2.5vw;
+                            }
+
+                            .rating {
+                                padding: 0.6vw 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

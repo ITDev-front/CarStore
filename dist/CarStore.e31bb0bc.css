@@ -143,6 +143,7 @@ header .header-middle .additional-elements .element svg {
 header .header-middle .additional-elements .element span.name-block {
   display: block;
   padding-top: 0.4vw;
+  font-size: 1.25vw;
 }
 header .header-middle .additional-elements .element a {
   color: #fff;
@@ -156,6 +157,7 @@ header .header-bottom {
 header .header-bottom a {
   margin: 0 4%;
   text-decoration: none;
+  font-size: 1.3vw;
   background: linear-gradient(270deg, #fff, #fff);
   background-size: 50vw 20vw;
   background-position: 0vw;
@@ -289,6 +291,7 @@ main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item .rating {
   padding: 0.5vw 0 1.1vw 0;
 }
 main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item .rating span {
+  font-size: 1.5vw;
   color: #1c1c1c;
 }
 main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item .rating span.checked {
@@ -374,6 +377,7 @@ main .special-offers .wrapper .item button {
   border: none;
   border-radius: 10vw;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 footer {
@@ -417,7 +421,7 @@ footer .wrapper .newsletter p {
 }
 footer .wrapper .newsletter input[type=email] {
   display: block;
-  width: 90%;
+  width: 100%;
   padding: 0.7vw;
   margin-top: 1vw;
   color: #fff;
@@ -437,6 +441,7 @@ footer .wrapper .newsletter button {
   border: none;
   border-radius: 10vw;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
 header .header-top .element:hover a {
@@ -451,7 +456,7 @@ header .header-middle .additional-elements .element:hover svg {
 header .header-bottom a:hover {
   background: linear-gradient(270deg, #ff3448, #fff);
   background-size: 50vw 20vw;
-  background-position: 6vw;
+  background-position: 8vw;
   background-clip: text;
   -o-background-clip: text;
   -ms-background-clip: text;
@@ -472,6 +477,12 @@ main .items .item:hover h2 {
 main .items .item:hover img {
   transform: scale(1.1);
 }
+main .featured-products .special-offers button:hover {
+  background-color: #8d1824;
+}
+main .featured-products .special-offers button:active {
+  background-color: #700e18;
+}
 
 footer .quicklink a:hover {
   color: #ff3448;
@@ -479,8 +490,102 @@ footer .quicklink a:hover {
 footer .quicklink:hover hr {
   width: 100%;
 }
+footer .newsletter button:hover {
+  background-color: #8d1824;
+}
+footer .newsletter button:active {
+  background-color: #700e18;
+}
 footer .newsletter:hover hr {
   width: 100%;
+}
+@media only screen and (max-width: 800px) {
+  main .featured-products .special-offers .wrapper .item h3 {
+    font-size: 1.5vw;
+  }
+  main .featured-products .special-offers .wrapper .item button {
+    font-size: 1.75vw;
+  }
+
+  footer .quicklink a {
+    font-size: 1.75vw;
+  }
+  footer .quicklink:nth-child(2) {
+    display: none;
+  }
+  footer .wrapper h1 {
+    font-size: 2vw;
+  }
+  footer .wrapper .newsletter {
+    width: 50%;
+  }
+  footer .wrapper .newsletter input[type=email] {
+    margin-top: 2.2vw;
+  }
+  footer .wrapper .newsletter p {
+    font-size: 2vw;
+  }
+  footer .wrapper .newsletter button {
+    margin: 2.2vw auto 0 auto;
+    font-size: 1.75vw;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  header .header-top .element a {
+    font-size: 1.25vw;
+  }
+  header .header-top .element svg {
+    width: 1.2vw;
+    height: 1.2vw;
+  }
+  header .header-top input[type=search].shown,
+header .header-top input[type=search]:focus {
+    width: 45vw;
+  }
+  header .header-middle .information {
+    display: none;
+  }
+  header .header-middle .additional-elements {
+    margin-left: auto;
+  }
+  header .header-bottom a {
+    margin: 0 2.5%;
+  }
+
+  main .items {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  main .items .item .item-inner {
+    padding: 8vw 0 8vw 8vw;
+  }
+  main .items .item .item-inner h1 {
+    padding-bottom: 1vw;
+    font-size: 5vw;
+  }
+  main .items .item .item-inner h2 {
+    font-size: 2vw;
+  }
+  main .items .item img {
+    margin-left: auto;
+  }
+  main .featured-products h1 {
+    font-size: 3vw;
+  }
+  main .featured-products .items-2 .wrapper {
+    width: 100%;
+  }
+  main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item h2 {
+    height: 4vw;
+    line-height: 2.25vw;
+    font-size: 2vw;
+  }
+  main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item h1 {
+    font-size: 2.5vw;
+  }
+  main .featured-products .items-2 .wrapper .fp-item-wrapper .fp-item .rating {
+    padding: 0.6vw 0;
+  }
 }
 
 /*# sourceMappingURL=/CarStore.e31bb0bc.css.map */

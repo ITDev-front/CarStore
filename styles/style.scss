@@ -206,6 +206,8 @@ header {
                         display: block;
 
                         padding-top: .4vw;
+
+                        font-size: 1.25vw;
                     }
                 }
 
@@ -229,6 +231,8 @@ header {
             margin: 0 4%;
 
             text-decoration: none;
+
+            font-size: 1.3vw;
 
             background: linear-gradient(270deg, #fff, #fff);
 
@@ -433,6 +437,8 @@ main {
                             padding: .5vw 0 1.1vw 0;
 
                             span {
+                                font-size: 1.5vw;
+
                                 color: #1c1c1c;
 
                                 &.checked {
@@ -567,6 +573,8 @@ main {
                     border-radius: 10vw;
 
                     cursor: pointer;
+
+                    transition: background-color .2s ease-in-out;
                 }
             }
         }
@@ -636,7 +644,7 @@ footer {
             input[type="email"] {
                 display: block;
 
-                width: 90%;
+                width: 100%;
 
                 padding: .7vw;
                 margin-top: 1vw;
@@ -668,6 +676,8 @@ footer {
                 border-radius: 10vw;
 
                 cursor: pointer;
+
+                transition: background-color .2s ease-in-out;
             }
         }
     }
@@ -703,7 +713,7 @@ header {
             background: linear-gradient(270deg, #ff3448, #fff);
 
             background-size: 50vw 20vw;
-            background-position: 6vw;
+            background-position: 8vw;
 
             background-clip: text;
             -o-background-clip: text;
@@ -736,6 +746,18 @@ main {
             }
         }
     }
+
+    .featured-products {
+        .special-offers {
+            button:hover {
+                background-color: #8d1824;
+            }
+
+            button:active {
+                background-color: #700e18;
+            }
+        }
+    }
 }
 
 footer {
@@ -748,6 +770,16 @@ footer {
     .quicklink:hover {
         hr {
             width: 100%
+        }
+    }
+
+    .newsletter {
+        button:hover {
+            background-color: #8d1824;
+        }
+
+        button:active {
+            background-color: #700e18;
         }
     }
 

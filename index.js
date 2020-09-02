@@ -31,14 +31,3 @@ for (let i = 0; i < fpItemWrappers.length; i++) {
         fpItemsSelected[i].classList.remove('shown');
     });
 };
-    
-
-// itemsBlock.addEventListener('click', (event) => {
-//     const target = event.target;
-
-//     for (let i = 0; i < fpItemWrappers.length; i++) {
-//         if (target === fpItemWrappers[i]) {
-//             console.log(event)
-//         }
-//     }
-// })
